@@ -1,0 +1,126 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.menu {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+
+  background: $blue;
+  padding: 72px 0 96px;
+
+  overflow-x: clip;
+}
+
+.menu__inner {
+  max-width: $max-width;
+  margin: 0 auto;
+  @include container-padding;
+  text-align: center;
+}
+
+.menu__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: $space-5;
+  color: $black;
+}
+
+.menu__tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: $space-7;
+  max-width: 100%;
+}
+
+.menu__tab {
+  background: transparent;
+  border: 1px solid $black;
+  border-radius: 0;
+  padding: 8px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: $black;
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+
+  &.is-active {
+    background: rgba(255, 255, 255, 0.478);
+  }
+}
+
+.menu__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  justify-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media (max-width: $bp-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.menu-card {
+  width: 100%;
+  max-width: 450px;
+  background: $white;
+  text-align: left;
+}
+
+.menu-card__media {
+  background: $black;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+}
+
+.menu-card__body {
+  padding: 18px 20px 22px;
+}
+
+.menu-card__title {
+  font-size: 18px;
+  font-weight: $fw-bold;
+  margin-bottom: 8px;
+  color: $black;
+}
+
+.menu-card__text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: $black;
+  margin-bottom: 12px;
+}
+
+@media (max-width: $bp-md) {
+  .menu {
+    padding: 56px 0 72px;
+  }
+
+  .menu-card__media {
+    height: 260px;
+  }
+}

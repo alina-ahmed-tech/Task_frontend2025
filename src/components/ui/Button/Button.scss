@@ -1,0 +1,11 @@
+@use "../../../styles/variables" as *;
+
+.ui-button {
+  background: transparent;
+  border: 1px solid $black;
+  border-radius: 0;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  cursor: pointer;
+}
