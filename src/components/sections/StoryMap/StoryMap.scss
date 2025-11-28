@@ -1,0 +1,68 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.storymap {
+  width: 100%;
+  padding: 88px 0;
+}
+
+.storymap__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.storymap__content {
+  text-align: left;
+}
+
+.storymap__title {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: $fw-extrabold;
+  letter-spacing: 0.02em;
+  margin-bottom: 20px;
+  color: $black;
+}
+
+.storymap__text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: $black;
+  max-width: 620px;
+  margin-bottom: 28px;
+}
+
+.storymap__cta {
+  min-width: 180px;
+  text-align: center;
+}
+
+.storymap__media {
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+@media (max-width: $bp-md) {
+  .storymap {
+    padding: 64px 0;
+  }
+
+  .storymap__cta {
+    min-width: 160px;
+  }
+}

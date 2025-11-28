@@ -1,0 +1,77 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.newsletter {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.newsletter__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.6fr;
+  min-height: 220px;
+
+  @media (max-width: $bp-lg) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.newsletter__content {
+  background: $blue;
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 10px;
+
+  @media (max-width: $bp-md) {
+    padding: 22px 20px;
+  }
+}
+
+.newsletter__tag {
+  font-size: 12px;
+  font-weight: 600;
+  color: $black;
+  background: $white;
+  padding: 4px 8px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.newsletter__title {
+  font-size: 16px;
+  font-weight: 00;
+  line-height: 1.45;
+  color: $black;
+  max-width: 520px;
+  margin-bottom: 6px;
+}
+
+.newsletter__cta {
+  margin-top: 4px;
+}
+
+.newsletter__media {
+  background: $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    min-height: 220px;
+    object-fit: cover;
+    display: block;
+  }
+}
+
+@media (max-width: $bp-lg) {
+  .newsletter__media img {
+    min-height: 200px;
+  }
+}
