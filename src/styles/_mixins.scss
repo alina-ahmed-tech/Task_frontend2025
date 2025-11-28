@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+@mixin md {
+  @media (min-width: $bp-md) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: $bp-lg) {
+    @content;
+  }
+}
+
+@mixin container-padding {
+  padding-left: $space-4;
+  padding-right: $space-4;
+
+  @include md {
+    padding-left: $space-5;
+    padding-right: $space-5;
+  }
+}

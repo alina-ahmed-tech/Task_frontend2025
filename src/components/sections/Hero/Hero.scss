@@ -1,0 +1,59 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: clamp(420px, 70vh, 760px);
+  min-height: 55vh;
+  overflow: hidden;
+
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      $black-35 0%,
+      $black-45 5%,
+      $black-35 20%
+    );
+  }
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: $max-width;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    @include container-padding;
+  }
+
+  &__title {
+    color: $white;
+    font-weight: $fw-extrabold;
+    line-height: 1.05;
+    font-size: clamp(32px, 4.2vw, 64px);
+    letter-spacing: -0.01em;
+    text-shadow: 0 8px 24px $black-50;
+    max-width: 90%;
+  }
+}
+
+@include md {
+  .hero {
+    min-height: 70vh;
+
+    &__title {
+      max-width: 520px;
+    }
+  }
+}

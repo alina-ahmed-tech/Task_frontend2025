@@ -1,0 +1,83 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: transparent;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+
+  &--scrolled {
+    position: fixed;
+    background: $black-75;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6px);
+  }
+
+  &__inner {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+
+    @include container-padding;
+  }
+
+  &__logo img {
+    height: 26px;
+    width: auto;
+    filter: invert(1);
+  }
+
+  &__nav {
+    display: none;
+    justify-content: center;
+    gap: 28px;
+  }
+
+  &__link {
+    color: $white;
+    text-decoration: none;
+    font-weight: $fw-bold;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    opacity: 0.9;
+
+    &:hover,
+    &:focus-visible {
+      opacity: 1;
+    }
+  }
+
+  &__contact {
+    color: $white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: $fw-bold;
+    opacity: 0.95;
+  }
+}
+
+@include md {
+  .header {
+    &__inner {
+      padding-top: 18px;
+      padding-bottom: 18px;
+      grid-template-columns: auto 1fr auto;
+    }
+
+    &__nav {
+      display: flex;
+    }
+  }
+}

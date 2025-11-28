@@ -1,0 +1,9 @@
+@use "../../../styles/variables" as *;
+@use "../../../styles/mixins" as *;
+
+.container {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  @include container-padding;
+}
